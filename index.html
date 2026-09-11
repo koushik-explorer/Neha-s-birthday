@@ -460,7 +460,7 @@
   
   .selfie-capture-area {
     position: relative;
-    width: min(90vw, 700px);
+    width: min(90vw, 650px);
     aspect-ratio: 4/3;
     background: radial-gradient(circle at center, #fff0f5 0%, #ffc2d1 100%);
     border: 12px solid #fff;
@@ -473,7 +473,7 @@
   
   .selfie-header {
     position: absolute; top: 10%; width: 100%; text-align: center;
-    font-family: 'Dancing Script', cursive; font-size: clamp(30px, 6vw, 45px);
+    font-family: 'Dancing Script', cursive; font-size: clamp(26px, 6vw, 45px);
     color: var(--pink-deep);
     text-shadow: 2px 2px 0px #fff;
     z-index: 5;
@@ -486,6 +486,14 @@
   
   /* Reset animations for snapshot */
   .selfie-person { opacity: 1 !important; transform: none !important; transition: none !important; margin: 0 !important; width: 120px; }
+  
+  @media (max-width: 600px) {
+    .selfie-capture-area { aspect-ratio: 3/4; border-width: 8px; border-bottom-width: 35px; }
+    .selfie-header { top: 6%; }
+    .selfie-person { width: 30% !important; }
+    .selfie-person .nametag { font-size: 11px !important; }
+    .selfie-cake { width: 30% !important; }
+  }
   .selfie-person .nametag { opacity: 1 !important; transform: none !important; transition: none !important; font-size: 14px; margin-bottom: 5px; }
   .selfie-person .arrow-wrap { opacity: 1 !important; transition: none !important; width: 30px; margin-bottom: -5px; }
   .selfie-person.boy .arrow-wrap { transform: translateX(20px); }
@@ -513,7 +521,7 @@
 
   /* ---------- ENVELOPE PRESENT ---------- */
   #bhumika-present {
-    position: absolute; right: 5%; bottom: 40%;
+    position: absolute; right: 5%; top: 15%;
     display: flex; flex-direction: column; align-items: center;
     opacity: 0; transform: translateY(30px); pointer-events: none;
     transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.2,1.4,.4,1);
